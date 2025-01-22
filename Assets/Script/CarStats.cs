@@ -34,9 +34,26 @@ public class CarStats : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating(nameof(ConsumeGas), 1f, 1f);
+        StartGame(); 
+    }
+
+    public void ResetGame()
+    {
+        gas = 100; 
+        Time.timeScale = 1; 
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(false); 
+        }
         UpdateGasUI(); 
     }
+
+    public void StartGame()
+    {
+        ResetGame(); 
+        InvokeRepeating(nameof(ConsumeGas), 1f, 1f); // 연료 소비 시작
+    }
+    
     public void IncreaseGas(int amount)
     {
         gas += amount;
@@ -78,17 +95,5 @@ public class CarStats : MonoBehaviour
             gameOverPanel.SetActive(true);
         }
         Time.timeScale = 0; 
-    }
-
-    public void RestartGame()
-    {
-        Time.timeScale = 1;
-        if (gameOverPanel != null)
-        {
-            gameOverPanel.SetActive(false);
-        }
-        gas = 100; 
-        UpdateGasUI(); 
-        InvokeRepeating(nameof(ConsumeGas), 1f, 1f); 
     }
 }

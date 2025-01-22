@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneController : MonoBehaviour
+public class GameOverManager : MonoBehaviour
 {
-    public void GoGameScene()
+    public void RestartGame()
     {
-        SceneManager.LoadScene("GameScene");
-        
+        SceneManager.LoadScene("StartScene");
     }
 }
