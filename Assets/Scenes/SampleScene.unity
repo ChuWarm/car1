@@ -209,7 +209,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.07, y: 3.84, z: -10}
+  m_LocalPosition: {x: 0, y: 3.84, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AssetsPPU: 32
-  m_RefResolutionX: 384
+  m_RefResolutionX: 290
   m_RefResolutionY: 384
   m_UpscaleRT: 0
   m_PixelSnapping: 1
@@ -245,6 +245,7 @@ GameObject:
   m_Component:
   - component: {fileID: 829580781}
   - component: {fileID: 829580780}
+  - component: {fileID: 829580782}
   m_Layer: 0
   m_Name: car_people7
   m_TagString: Player
@@ -319,6 +320,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &829580782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829580779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5bab8dda099e694fa94a0f99b8a6373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laneWidth: 1.5
+  moveSpeed: 8
 --- !u!1 &1361867114
 GameObject:
   m_ObjectHideFlags: 0
