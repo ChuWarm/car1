@@ -7,8 +7,13 @@ public class TileManager : MonoBehaviour
     public float scrollSpeed = 5f;  // 맵 스크롤 속도
     public float tileLength = 5f; // 타일 길이
 
-    void Start()
+    void Awake()
     {
+        GameObject[] cameras = GameObject.FindGameObjectsWithTag("MainCamera");
+        if (cameras.Length > 1)
+        {
+            Destroy(cameras[1]); // 중복된 카메라 제거
+        }
     }
 
     void Update()
