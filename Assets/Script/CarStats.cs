@@ -57,6 +57,10 @@ public class CarStats : MonoBehaviour
     public void IncreaseGas(int amount)
     {
         gas += amount;
+        if (gas >= 100)
+        {
+            gas = 100;
+        }
         UpdateGasUI(); 
     }
     public void DecreaseGas(int amount)
