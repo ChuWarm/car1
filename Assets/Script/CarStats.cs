@@ -6,7 +6,7 @@ public class CarStats : MonoBehaviour
 {
     public static CarStats Instance; 
     public int gas = 100;            
-    public int gasConsumption = 5;   
+    public int gasConsumption = 8;   
     public GameObject gameOverPanel; 
     public TextMeshProUGUI gasText;  
 
@@ -34,11 +34,14 @@ public class CarStats : MonoBehaviour
 
     private void Start()
     {
-
         InvokeRepeating(nameof(ConsumeGas), 1f, 1f);
         UpdateGasUI(); 
     }
-    
+    public void IncreaseGas(int amount)
+    {
+        gas += amount;
+        UpdateGasUI(); 
+    }
     public void DecreaseGas(int amount)
     {
         gas -= amount;
@@ -59,19 +62,12 @@ public class CarStats : MonoBehaviour
         {
             gasText.text = string.Empty;
             gasText.text = "Gas: " + gas; 
-            gasText.ForceMeshUpdate();
         }
     }
 
     void ConsumeGas()
     {
         DecreaseGas(gasConsumption);
-    }
-
-    public void IncreaseGas(int amount)
-    {
-        gas += amount;
-        UpdateGasUI(); 
     }
 
     void GameOver()
